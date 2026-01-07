@@ -5,6 +5,13 @@ Este projeto tem como objetivo demonstrar a criação de uma automação de test
 
 A automação foi desenvolvida até o limite permitido pela aplicação, respeitando os mecanismos de segurança implementados.
 
+## 🎥 Vídeo de Demonstração
+
+A execução real da automação (incluindo validação manual de CAPTCHA e finalização automática dos fluxos) pode ser visualizada no vídeo abaixo:
+
+▶️ **Assistir / baixar o vídeo:**  
+https://github.com/josimachado-qa/correios-automacao-specflow/releases/download/v1.0-demo/Gravacao.de.Tela.2026-01-07.152036.mp4
+
 ---
 
 ## 🧪 Cenários Automatizados
