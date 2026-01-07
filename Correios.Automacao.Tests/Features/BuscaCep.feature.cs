@@ -20,8 +20,8 @@ namespace Correios.Automacao.Tests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Avaliação - Busca CEP Correios (com impedimento por CAPTCHA)")]
-    public partial class Avaliacao_BuscaCEPCorreiosComImpedimentoPorCAPTCHAFeature
+    [NUnit.Framework.DescriptionAttribute("Avaliação – Busca CEP e Rastreamento Correios (CAPTCHA manual)")]
+    public partial class AvaliacaoBuscaCEPERastreamentoCorreiosCAPTCHAManualFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -35,7 +35,7 @@ namespace Correios.Automacao.Tests.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Avaliação - Busca CEP Correios (com impedimento por CAPTCHA)", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Avaliação – Busca CEP e Rastreamento Correios (CAPTCHA manual)", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,12 +74,12 @@ namespace Correios.Automacao.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validar fluxo de busca CEP e rastreamento até o limite permitido (CAPTCHA)")]
-        public void ValidarFluxoDeBuscaCEPERastreamentoAteOLimitePermitidoCAPTCHA()
+        [NUnit.Framework.DescriptionAttribute("Validar fluxo de busca CEP e rastreamento com CAPTCHA manual")]
+        public void ValidarFluxoDeBuscaCEPERastreamentoComCAPTCHAManual()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar fluxo de busca CEP e rastreamento até o limite permitido (CAPTCHA)", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar fluxo de busca CEP e rastreamento com CAPTCHA manual", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -91,40 +91,56 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 4
-testRunner.Given("que estou na página de Busca CEP dos Correios", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("que estou na página de Busca CEP dos Correios", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
-testRunner.When("eu informo o CEP \"80700000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("eu informo o CEP \"80700000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 6
-testRunner.And("eu tento buscar o CEP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("eu tento buscar o CEP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 7
-testRunner.Then("devo identificar que existe CAPTCHA bloqueando a automação e registrar o impedime" +
-                        "nto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("eu aguardo o usuário preencher o CAPTCHA e reenviar a consulta de CEP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 8
+  testRunner.Then("devo confirmar que o CEP não existe", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 9
-testRunner.When("eu informo o CEP \"01013-001\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 10
-testRunner.And("eu tento buscar o CEP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("eu volto para a tela inicial de busca de CEP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
-testRunner.Then("devo identificar que existe CAPTCHA bloqueando a automação e registrar o impedime" +
-                        "nto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Given("que estou na página de Busca CEP dos Correios", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 12
+  testRunner.When("eu informo o CEP \"01013-001\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
-testRunner.Given("que estou na página de Rastreamento dos Correios", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.And("eu tento buscar o CEP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
-testRunner.When("eu informo o código de rastreio \"SS987654321BR\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("eu aguardo o usuário preencher o CAPTCHA e reenviar a consulta de CEP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
-testRunner.And("eu tento buscar o rastreio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.Then("devo confirmar que o resultado contém \"Rua Quinze de Novembro, São Paulo/SP\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 16
-testRunner.Then("devo identificar que existe CAPTCHA bloqueando a automação e registrar o impedime" +
-                        "nto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("eu volto para a tela inicial de busca de CEP", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 18
+  testRunner.Given("que estou na página de Rastreamento dos Correios", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 19
+  testRunner.When("eu informo o código de rastreio \"SS987654321BR\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 20
+  testRunner.And("eu tento consultar o rastreio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 21
+  testRunner.And("eu aguardo o usuário preencher o CAPTCHA e reenviar a consulta de rastreio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 22
+  testRunner.Then("devo confirmar a mensagem de rastreio inválido \"Objeto não encontrado na base de " +
+                        "dados dos Correios.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
