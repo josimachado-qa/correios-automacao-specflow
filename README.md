@@ -10,7 +10,8 @@ A automação foi desenvolvida até o limite permitido pela aplicação, respeit
 A execução real da automação (incluindo validação manual de CAPTCHA e finalização automática dos fluxos) pode ser visualizada no vídeo abaixo:
 
 ▶️ **Assistir / baixar o vídeo:**  
-https://github.com/josimachado-qa/correios-automacao-specflow/releases/download/v1.0-demo/Gravacao.de.Tela.2026-01-07.152036.mp4
+
+https://github.com/user-attachments/assets/a5a837c2-b66c-46f8-8383-38b2b3a62a92
 
 ---
 
