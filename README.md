@@ -1,33 +1,32 @@
 # Automação Correios – Busca CEP e Rastreamento
 
 ## 📌 Objetivo
-Este projeto tem como objetivo demonstrar a criação de uma automação de testes E2E utilizando C#, SpecFlow, NUnit e Selenium WebDriver, aplicada aos fluxos de Busca de CEP e Rastreamento de objetos no site dos Correios.
+Este projeto tem como objetivo demonstrar a criação de uma automação de testes E2E utilizando C#, SpecFlow, NUnit e Selenium WebDriver, aplicada aos fluxos de **Busca de CEP** e **Rastreamento de objetos** no site dos Correios.
 
 A automação foi desenvolvida até o limite permitido pela aplicação, respeitando os mecanismos de segurança implementados.
 
 ---
 
 ## 🧪 Cenários Automatizados
-- Acesso à página de Busca de CEP dos Correios
-- Preenchimento do campo de CEP com valores válidos e inválidos
-- Tentativa de execução da busca
-- Acesso à página de Rastreamento
-- Preenchimento do código de rastreio
-- Tentativa de execução do rastreamento
+- Acesso à página de Busca de CEP dos Correios  
+- Preenchimento do campo de CEP com valores válidos e inválidos  
+- Tentativa de execução da busca  
+- Acesso à página de Rastreamento  
+- Preenchimento do código de rastreio  
+- Tentativa de execução do rastreamento  
 
-Os cenários estão descritos em BDD (Gherkin) no arquivo BuscaCep.feature.
+Os cenários estão descritos em BDD (Gherkin) no arquivo `BuscaCep.feature`.
 
 ---
 
 ## 🚫 Impedimento Técnico – CAPTCHA
-Durante a execução dos fluxos, foi identificado que tanto a Busca de CEP quanto o Rastreamento exigem a resolução de um CAPTCHA obrigatório para prosseguir.
+Durante a execução dos fluxos, foi identificado que tanto a **Busca de CEP** quanto o **Rastreamento** exigem a resolução de um **CAPTCHA obrigatório** para prosseguir.
 
 Por se tratar de um mecanismo de segurança:
-- A automação não tenta burlar ou contornar o CAPTCHA
-- O teste valida a navegação, o preenchimento dos campos e a tentativa de busca
-- O cenário registra formalmente o impedimento técnico, encerrando o fluxo de forma controlada
-
-Esse comportamento está documentado nos cenários como uma limitação intencional, seguindo boas práticas de automação e ética profissional.
+- A automação não tenta burlar ou contornar o CAPTCHA  
+- O teste valida a navegação, o preenchimento dos campos e a tentativa de consulta  
+- O cenário aguarda o usuário resolver o CAPTCHA manualmente  
+- O fluxo continua automaticamente somente após o CAPTCHA ser validado corretamente  
 
 ---
 
@@ -42,18 +41,34 @@ Esse comportamento está documentado nos cenários como uma limitação intencio
 ---
 
 ## ▶️ Como Executar o Projeto
-1. Clonar o repositório:
-   git clone https://github.com/josimachado-qa/correios-automacao-specflow.git
 
-2. Abrir a solução no Visual Studio:
-   Correios.Automacao.sln
+### 1. Clonar o repositório
+```
+git clone https://github.com/josimachado-qa/correios-automacao-specflow.git
+```
 
-3. Restaurar os pacotes NuGet
+### 2. Abrir a solução
+Abra o arquivo `Correios.Automacao.sln` no Visual Studio.
 
-4. Executar os testes pelo Test Explorer ou via terminal:
-   dotnet test
+### 3. Restaurar os pacotes
+Restaure os pacotes NuGet pelo Visual Studio ou terminal.
+
+### 4. Executar os testes
+```
+dotnet test
+```
+
+---
+
+## 🧭 Durante a execução
+- O navegador será aberto automaticamente  
+- O usuário deverá preencher o CAPTCHA quando solicitado  
+- Caso o CAPTCHA seja digitado incorretamente, o teste continuará aguardando  
+- O teste só prossegue quando o CAPTCHA for resolvido corretamente  
 
 ---
 
 ## 📎 Observações Finais
-Este projeto tem caráter técnico e demonstrativo, com foco em estrutura, organização, escrita de cenários BDD e tratamento correto de impedimentos reais encontrados em aplicações com mecanismos de segurança.
+Este projeto foi desenvolvido com foco em **qualidade, realismo e boas práticas de automação**, refletindo os desafios reais encontrados em aplicações que utilizam mecanismos de segurança como CAPTCHA.
+
+O objetivo não é burlar o sistema, mas demonstrar **capacidade técnica, estrutura de testes, automação de fluxos reais e tomada de decisão madura em QA**.
